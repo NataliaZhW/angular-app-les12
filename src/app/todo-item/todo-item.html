@@ -1,0 +1,32 @@
+<div class="todo-item" [class.completed]="item.completed">
+  <div class="item-content" *ngIf="!isEditing; else editTemplate">
+    <input 
+      type="checkbox" 
+      [checked]="item.completed" 
+      (change)="onToggle()"
+      class="checkbox"
+    >
+    <span class="title" (dblclick)="startEdit()">{{ item.title }}</span>
+    <div class="actions">
+      <button (click)="moveUp()" class="btn move-btn" title="Переместить вверх">↑</button>
+      <button (click)="moveDown()" class="btn move-btn" title="Переместить вниз">↓</button>
+      <button (click)="startEdit()" class="btn edit-btn" title="Редактировать">✏️</button>
+      <button (click)="onDelete()" class="btn delete-btn" title="Удалить">❌</button>
+    </div>
+  </div>
+  
+  <ng-template #editTemplate>
+    <div class="edit-form">
+      <input 
+        type="text" 
+        [(ngModel)]="editTitle"
+        (keyup.enter)="saveEdit()"
+        (keyup.escape)="cancelEdit()"
+        class="edit-input"
+        #editInput
+      >
+      <button (click)="saveEdit()" class="btn save-btn">✅</button>
+      <button (click)="cancelEdit()" class="btn cancel-btn">❌</button>
+    </div>
+  </ng-template>
+</div>

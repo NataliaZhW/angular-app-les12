@@ -1,0 +1,12 @@
+<div class="todo-form">
+  <input 
+    type="text" 
+    [(ngModel)]="title"
+    (keyup)="onKeyPress($event)"
+    placeholder="Добавить новую задачу..."
+    class="form-input"
+  >
+  <button (click)="onSubmit()" class="add-btn">
+    Добавить
+  </button>
+</div>
