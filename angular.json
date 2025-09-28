@@ -56,10 +56,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "angular-app-les11-2:build:production"
+              "buildTarget": "angular-app-les12:build:production"
             },
             "development": {
-              "buildTarget": "angular-app-les11-2:build:development"
+              "buildTarget": "angular-app-les12:build:development"
             }
           },
           "defaultConfiguration": "development"
